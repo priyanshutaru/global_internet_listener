@@ -4,6 +4,16 @@
 With just a simple wrapper in your `main.dart`, it observes connectivity changes and allows you to handle them elegantly.
 
 ---
+## 📽️ Demo
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/71739cd2-784b-42f4-aad9-c8512adc4ea1" 
+       alt="Demo GIF" 
+       width="350" 
+       style="border-radius: 12px; border: 1px solid #ccc;" />
+</div>
+
+---
 
 ## ✅ Features
 
@@ -11,6 +21,7 @@ With just a simple wrapper in your `main.dart`, it observes connectivity changes
 - 🚀 Automatically listens across the entire app.
 - 🧩 Plug-and-play usage inside `MaterialApp.builder`.
 - 🎯 Useful for showing alerts, snackbars, or banners.
+
 - 🛠️ Minimal configuration — works out of the box.
 
 ---
@@ -23,12 +34,6 @@ Add this package to your `pubspec.yaml`:
 dependencies:
   global_internet_listener: ^1.0.0
 ```
-
----
-
-## 📽️ Demo
-
-
 
 ---
 
