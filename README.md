@@ -1,39 +1,83 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# 🌐 global_internet_listener
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+`global_internet_listener` is a lightweight and easy-to-use Flutter package that enables **global internet connectivity monitoring** throughout your app.  
+With just a simple wrapper in your `main.dart`, it observes connectivity changes and allows you to handle them elegantly.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+---
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+## ✅ Features
 
-## Features
+- 🔌 Detects internet status (online/offline) globally.
+- 🚀 Automatically listens across the entire app.
+- 🧩 Plug-and-play usage inside `MaterialApp.builder`.
+- 🎯 Useful for showing alerts, snackbars, or banners.
+- 🛠️ Minimal configuration — works out of the box.
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+---
 
-## Getting started
+## 🚀 Getting Started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add this package to your `pubspec.yaml`:
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+  global_internet_listener: ^1.0.0
 ```
 
-## Additional information
+---
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+## 📽️ Demo
+
+
+
+---
+
+## 📦 Usage
+
+Wrap your `MaterialApp` with the `GlobalInternetListenerScope`:
+
+```dart
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Internet Connectivity Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+
+      // ✅ Enable global internet checker
+      builder: (context, child) {
+        return GlobalInternetListener(
+          child: child ?? const SizedBox.shrink(),
+        );
+      },
+
+      home: const MyHomePage(title: 'Home Page'),
+    );
+  }
+}
+
+```
+
+---
+
+## 📌 Additional Info
+
+- Package will automatically listen to connectivity changes using the `connectivity_plus` plugin.
+- You can customize the `onOffline` and `onOnline` callbacks based on your app needs.
+
+---
+
+## 🙌 Contribution
+
+Feel free to open issues or contribute via PRs.
+
+
